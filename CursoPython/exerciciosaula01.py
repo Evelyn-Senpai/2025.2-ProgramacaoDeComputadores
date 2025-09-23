@@ -12,7 +12,7 @@ print("Você nasceu no dia", dia, "de", mes, "de", ano, ". Correto?")
 
 #Crie um script Python que leia dois números e mostre a soma entre eles.
 
-numero1 = input("Digite um número: ")
-numero2 = input("Digite outro número: ")
-soma = int(numero1) + int(numero2)
-print("A soma entre", numero1, "e", numero2, "é igual a", soma)
+n1 = input("Digite um número: ")
+n2 = input("Digite outro número: ")
+soma = int(n1) + int(n2)
+print("A soma entre", n1, "e", n2, "é igual a", soma)
