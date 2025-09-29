@@ -22,13 +22,13 @@ tang = math.tan(math.radians(ang))
 print('O ângulo {}° tem\nSENO = {:.2f}\nCOSSENO = {:.2f}\nTANGENTE = {:.2f}'.format(ang, seno, coss, tang))
 
 # Um professor quer sortear um dos seus quatro alunos para apagar o quadro. Faça um programa que ajude ele, lendo o nome deles e escrevendo o nome escolhido.
-import random
+from random import choice
 a1 = str(input('Digite o nome do primeiro aluno: '))
 a2 = str(input('Digite o nome do segundp aluno: '))
 a3 = str(input('Digite o nome do terceiro aluno: '))
 a4 = str(input('Digite o nome do quarto aluno: '))
 lista = [a1, a2, a3, a4]
-escolhido = random.choice(lista)
+escolhido = choice(lista)
 print('O aluno escolhido foi: {}'.format(escolhido))
 
 # Faça uma lista que leia os valores em ordem aleatória.
