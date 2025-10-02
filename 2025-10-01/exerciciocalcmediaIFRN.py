@@ -33,16 +33,17 @@ if not (intNota2>=0 and intNota2<=100):
 intCargaHoraria = int(input('Informe a Carga Horária da Disciplina (h/a): '))
 
 #TODO: Validar se a carga horária é maior que zero e menor ou igual a 360
-if not(intCargaHoraria>=0 and intCargaHoraria<=360):
-   sys.exit('Carga horária invalida! Deve ser maior que 0 e menor que 360.')
+#if not (intCargaHoraria>0 and intCargaHoraria<=360): 
+if not (0 < intCargaHoraria <= 360):
+   sys.exit('Carga Horária inválida! Deve ser entre 1 e 360 horas/aula.')
 
 # Informando a quantidade de faltas do aluno
 intFaltas = int(input('Informe a quantidade de faltas do aluno: '))
 
 # TODO: Validar se a quantidade de faltas é maior ou igual a zero
 # e menor ou igual a carga horária
-if not (intFaltas>=0 and intFaltas<=intCargaHoraria):
-   sys.exit('Quantidade de faltas invalidas! Deve ser maior que ou igual 0 e menor ou igual a carga horária.')
+if not (0 <= intFaltas <= intCargaHoraria):
+   sys.exit(f'Quantidade de Faltas inválida! Deve ser entre 1 e {întCargaHoraria} horas/aula.')
 
 # Calculando a média ponderada e arredondando 
 # para o inteiro mais próximo
@@ -65,13 +66,16 @@ print(f'Frequência.....: {fltFrequencia}%')
 # TODO: implementar a lógica para mostrar se o aluno foi 
 # reprovado por nota, por frequência ou por ambos
 if (intMedia >= 60) and (fltFrequencia>=75):
-    print('APROVADO ')
+   print('APROVADO')
 elif (intMedia >= 20) and (fltFrequencia>=75):
    print('PROVA FINAL')
 else:
-    if (intMedia < 60):
-      print('REPROVADO POR MÉDIA')
-    elif (fltFrequencia < 75):
-      print('REPROVADO POR FREQUÊNCIA')
-    else:
-      print('REPROVADO POR MÉDIA E FREQUÊNCIA')
+   print('REPROVADO')
+   # Verificando motivo da reprovação
+   if intMedia < 20 and fltFrequencia < 75:
+      print('Motivo: Reprovado por nota e frequência')
+   elif intMedia < 20:
+      print('Motivo: Reprovado por nota')
+   else:
+      print('Motivo: Reprovado por frequência')
+
