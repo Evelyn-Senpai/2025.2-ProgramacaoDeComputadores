@@ -14,6 +14,7 @@ except Exception as strErro:
    sys.exit(f'EXCEÇÃO: {sys.exc_info()[0]} -> {strErro}\nEntre em Contato com o setor de desenvolvimento...')
 else:
    if raio <= 0:
+       
       sys.exit('ERRO: O Raio deve ser positivo...')
 
    area = 3.1416 * raio ** 2
