@@ -26,20 +26,17 @@ import sys
 from math import dist
 
 try:
-    a = int(input('Digite o valor de A: '))
+    a = float(input('Digite o valor de A: '))
 
-    if a <= 0:
+    if a == 0:
         raise FloatingPointError
 
 except FloatingPointError:
-    sys.exit('A equação não é de segundo grau. Informe valores maiores que zero!')
-
-except ValueError:
-    sys.exit('Informe valores inteiros!')
+    sys.exit('A equação não é de segundo grau. Informe valores diferentes que zero!')
 
 else:
-    b = int(input('Digite o valor de B: '))
-    c = int(input('Digite o valor de C: '))
+    b = float(input('Digite o valor de B: '))
+    c = float(input('Digite o valor de C: '))
 
     delta = (b*b) - 4 * a * c
     raiz_de_delta = delta**(1/2)
@@ -48,10 +45,10 @@ else:
         raiz1 = (-b + raiz_de_delta)/(2*a)
         raiz2 = (-b - raiz_de_delta)/(2*a)
         print(f'{delta} {raiz_de_delta}')
-        print(f'Para a equação {a} {b} {c}, as raizes são {raiz1} e {raiz2}')
+        print(f'A equação {a} {b} {c} possui duas raizes real, as raizes são {raiz1:.1f} e {raiz2:.1f}')
     elif delta == 0:
-        raiz1 = -b + raiz_de_delta/2*a
-        print(f'Para a equação {a} {b} {c}, a raize é {raiz1}')
+        raiz1 = -b/2*a
+        print(f'A equação {a} {b} {c} possui uma única raiz real, a raize é {raiz1:.1f}')
     else:
         print('A equação não possui raízes reais')
 
