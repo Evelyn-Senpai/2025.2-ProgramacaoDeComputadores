@@ -45,8 +45,8 @@ else:
     raiz_de_delta = delta**(1/2)
 
     if delta > 0:
-        raiz1 = (-b + raiz_de_delta/2*a)
-        raiz2 = -b - raiz_de_delta/2*a
+        raiz1 = (-b + raiz_de_delta)/(2*a)
+        raiz2 = (-b - raiz_de_delta)/(2*a)
         print(f'{delta} {raiz_de_delta}')
         print(f'Para a equação {a} {b} {c}, as raizes são {raiz1} e {raiz2}')
     elif delta == 0:
