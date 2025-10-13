@@ -12,12 +12,11 @@ idade = atual - data
 
 if idade <= 9:
     print('Você tem {} anos, a sua categoria é MIRIM'.format(idade))
-elif 9 > idade <= 14:
+elif idade <= 14:
     print('Você tem {} anos, a sua categoria é INFANTIL'.format(idade))
-elif 14 > idade <= 19:
+elif idade <= 19:
     print('Você tem {} anos, a sua categoria é JUNIOR'.format(idade))
-elif 19 > idade <= 25:
+elif idade <= 25:
     print('Você tem {} anos, a sua categoria é SÉNIOR'.format(idade))
-elif idade > 25:
-    print('Você tem {} anos, a sua categoria é MASTER'.format(idade))
-
+else:
+    print('Você tem {}, a sua categoria é MASTER'.format(idade))
