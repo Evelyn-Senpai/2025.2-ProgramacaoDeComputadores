@@ -31,7 +31,7 @@ except ValueError:
    sys.exit('ERRO: Digite um valor válido!')
 
 except Exception as strErro:
-   sys.exit(f'ERRO: {strERRO}')
+   sys.exit(f'ERRO: {strErro}')
 
 else:
    print(f'o ano {ano} é bissexto')
