@@ -33,20 +33,48 @@
 '''
 
 import sys
+import math
 
 try:
-
-    ladoA = float(input('Digite o valor lado A do triângulo'))
-    ladoB = float(input('Digite o valor lado B do triângulo'))
-    ladoC = float(input('Digite o valor lado C do triângulo'))
+    ladoA = float(input('Digite o valor lado A do triângulo: '))
+    ladoB = float(input('Digite o valor lado B do triângulo: '))
+    ladoC = float(input('Digite o valor lado C do triângulo: '))
 
 except ValueError:
     sys.exit('ERRO: Digite um valor válido!')
 
 except Exception as strErro:
-    sys.exit(f'ERRO: {strErro}')
+    sys.exit(f'ERRO: {strErro}!')
 
 else:
-    
+    if ladoA < ladoB+ladoC and ladoB < ladoA+ladoC and ladoC < ladoA+ladoB:
+      print('É possível formar um triângulo') 
+      cossA = math.cos(math.radians(ladoA))
+      cossB = math.cos(math.radians(ladoB)) 
+      cossC = math.cos(math.radians(ladoC))
+      print(f'O ângulo do lado A {ladoA} é {cossA:.1f}')
+      print(f'O ângulo do lado B {ladoB} é {cossB:.1f}')
+      print(f'O ângulo do lado C {ladoC} é {cossC:.1f}')
+
+      print('Quanto aos lados:')
+
+      if ladoA == ladoB == ladoC:
+          print('O triângulo é equilátero')
+      elif ladoA != ladoB != ladoC != ladoA:
+          print('O triângulo é escaleno')
+      else:
+          print('O triângulo é isósceles')
+
+      print('Quanto aos ângulos:')
+
+      if cossA > 90 or cossB > 90 or cossC > 90:
+          print(f'O ângulo é obtuso') 
+      elif cossA == 90 or cossB == 90 or cossC == 90:
+          print('O ângulo é retângulo')
+      else:
+          print('O ângulo é agudo')
+
+    else:
+        print('Não é possível formar um triângulo')
     
 
