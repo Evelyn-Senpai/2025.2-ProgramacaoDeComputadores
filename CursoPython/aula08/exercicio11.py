@@ -3,14 +3,31 @@
 # - Qual é o nome do homem mais velho.
 # = Quantas mulheres têm menos de 20 anos.
 
+cont_idade = 0
 cont_media = 0
-idade = 0
+cont_idade_maior_h = 0
+nome_maior_h = ''
+cont_idade_f = 0
 
 for pessoa in range(1, 5):
-    nome = str(input('Qual o nome da {}ª pessoa? '.format(pessoa)))
+    print('----- {}ª PESSOA -----'.format(pessoa))
+    nome = str(input('Qual o nome da {}ª pessoa? '.format(pessoa))).strip()
     idade = int(input('Qual a idade da {}ª pessoa? '.format(pessoa)))
-    sexo = bool(input('Qual o sexo da {}ª pessoa? (F) (M): '.format(pessoa)))
+    sexo = str(input('Qual o sexo da {}ª pessoa? (F) (M): '.format(pessoa))).strip()
 
-    idade += idade
+    cont_idade += idade
+    cont_media += 1
 
-print('A média das idades é: {}'.format(idade/4))
+    if pessoa == 1 and sexo in 'Mm':
+        cont_idade_maior_h = idade
+        nome_maior_h = nome
+    if sexo in 'Mm' and idade > cont_idade_maior_h:
+        cont_idade_maior_h = idade
+        nome_maior_h = nome
+    
+    elif sexo in 'Ff' and idade < 20:
+        cont_idade_f += 1
+
+print('A média das idades é: {:.1f}'.format(cont_idade/cont_media))
+print('O homem mais velho é: {}'.format(nome_maior_h))
+print('Tem {} mulheres com menos de 20 anos'.format(cont_idade_f))
