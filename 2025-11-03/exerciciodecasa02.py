@@ -17,9 +17,8 @@ except ValueError:
 except:
     sys.exit(f'ERRO: {sys.exc_info()}')
 else:
+    f1 = 0
+    f2 = 1
+    print(f'{f2}', end='')
     for f in range(1, n+1):
-        print(f'{f}')
-        f1 = f*(n-1)
-        f2 = f*(n-2)
-        f = f1 + f2
-print('FIM')
+        print(f', {f}', end='')
