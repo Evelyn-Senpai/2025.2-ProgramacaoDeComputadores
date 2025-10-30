@@ -13,4 +13,3 @@ while cont <= n:
     f1 = f2
     f2 = f
     cont += 1
-print('-> FIM')
