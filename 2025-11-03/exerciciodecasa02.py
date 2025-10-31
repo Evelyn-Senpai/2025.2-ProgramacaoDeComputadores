@@ -19,6 +19,11 @@ except:
 else:
     f1 = 0
     f2 = 1
+    cont = 3
     print(f'{f2}', end='')
-    for f in range(1, n+1):
+    for f in range(cont, n + 2):
+        f = f1 + f2
         print(f', {f}', end='')
+        f1 = f2
+        f2 = f
+        cont += 1
