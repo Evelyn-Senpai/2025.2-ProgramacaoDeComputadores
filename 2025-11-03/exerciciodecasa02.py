@@ -10,12 +10,12 @@
 import sys
 try:
     n = int(input('Informe um valor inteiro: '))
-    if n < 0:
-        sys.exit('ERRO: O valor deve ser maior ou igual a zero!')
+    if n <= 0:
+        sys.exit('ERRO: O valor deve ser maior que zero!')
 except ValueError:
     sys.exit('ERRO: Informe um valor inteiro!')
-except:
-    sys.exit(f'ERRO: {sys.exc_info()}')
+except Exception as Erro:
+    sys.exit(f'ERRO: {Erro}')
 else:
     f1 = 0
     f2 = 1
