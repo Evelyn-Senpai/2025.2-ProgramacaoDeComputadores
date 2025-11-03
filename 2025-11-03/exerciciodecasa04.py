@@ -24,12 +24,10 @@
 
 intSomaPares = 0
 intSomaImpares = 0
-intContador = 1
-for c in range(1, 100+1):
+for intContador in range(1, 100):
     if intContador % 2 == 0:
         intSomaPares += intContador
     else:
         intSomaImpares += intContador
-    intContador += 1
 print(f'Soma dos números pares é {intSomaPares}')
 print(f'Soma dos números ímpares é {intSomaImpares}')
