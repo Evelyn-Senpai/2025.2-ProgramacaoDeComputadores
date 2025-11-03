@@ -39,7 +39,9 @@ else:
         sys.exit(f'{intNumero}! = 1')
     intAuxiliar = intNumero
     intFatorial = 1
-    for intAuxiliar in range(1, intNumero+1):
-        intFatorial *= intAuxiliar
-        intAuxiliar -= 1
+    for intAuxiliar in range(intNumero, 1, -1):
+       intFatorial *= intAuxiliar
+   #  for intAuxiliar in range(1, intNumero+1):
+   #      intFatorial *= intAuxiliar
+   #      intAuxiliar -= 1
 print(f'{intNumero}! = {intFatorial}')
