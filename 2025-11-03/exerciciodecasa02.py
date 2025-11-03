@@ -10,18 +10,19 @@
 import sys
 try:
     n = int(input('Informe um valor inteiro: '))
-    if n <= 0:
-        sys.exit('ERRO: O valor deve ser maior que zero!')
+    if n <= 1:
+        sys.exit('ERRO: O valor deve ser maior que 15!')
 except ValueError:
     sys.exit('ERRO: Informe um valor inteiro!')
+except KeyboardInterrupt:
+    sys.exit('\nERRO: Ctrl + C pressionado pelo usuário')
 except Exception as Erro:
     sys.exit(f'ERRO: {Erro}')
 else:
     f1 = 0
     f2 = 1
-    cont = 3
     print(f'{f2}', end='')
-    for f in range(cont, n + 2):
+    for cont in range(3, n + 2):
         f = f1 + f2
         print(f', {f}', end='')
         f1 = f2
