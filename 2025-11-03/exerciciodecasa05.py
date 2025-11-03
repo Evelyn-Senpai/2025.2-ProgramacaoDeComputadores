@@ -16,9 +16,8 @@
 #    # Incremento do multiplicando
 #    intMultiplicando += 1
 
-intMultiplicando = 1
+# intMultiplicando = 1
 intMultiplicador = 6
-for c in range(1, 10+1):
+for intMultiplicando in range(1, 11):
     intProduto = intMultiplicador * intMultiplicando
     print(f'{intMultiplicador} x {intMultiplicando} = {intProduto}')
-    intMultiplicando += 1
