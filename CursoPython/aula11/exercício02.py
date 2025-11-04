@@ -7,5 +7,8 @@ d) Em que posição na tabela está o time da Chapecoense.
 '''
 times = ('Palmeiras', 'Flamengo', 'Mirassol', 'Bahia', 'Botafogo', 'Fluminense', 'São Paulo', 'Vasco Gama', 'Corinthians', 'Gremio')
 print('-='*15)
-print('Lista de times do Brasileirão:')
+print(f'Lista de times do Brasileirão: {times}')
 print('-='*15)
+print(f'Os primeiros 5 colocados são: {times[0:5]}')
+print(f'Os últimos 4 colocados são: {times[6:10]}')
+print(f'Lista em ordem alfabética: {sorted(times)}')
