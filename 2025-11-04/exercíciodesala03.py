@@ -34,8 +34,9 @@ except Exception as Erro:
     sys.exit(f'ERRO: {Erro}')
 else:
     numero_str = str(numero)
-    numero_ordenado = sorted(numero_str)
-    print(numero_ordenado)
+    numero_ordenado_str = sorted(numero_str)
+    numero_ordenado_inverso_str = sorted(numero_ordenado_str)
+
     inverso_str = numero_str[::-1]
     inverso = int(inverso_str)
     subtracao = numero - inverso
