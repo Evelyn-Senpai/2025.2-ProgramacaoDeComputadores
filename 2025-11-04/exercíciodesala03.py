@@ -33,7 +33,11 @@ except ValueError:
 except Exception as Erro:
     sys.exit(f'ERRO: {Erro}')
 else:
-    # print('Deu certo')
     texto = str(numero)
-    print(numero)
-    print(type(texto))
+    junto = texto.split()
+    separador = ''.join(junto)
+    contador = len(separador)
+    print(f'Texto = {texto}, Separador = {separador}, Quantidade = {contador}')
+    # for texto in range(contador, 1, -1):
+    #     print(contador)
+    # print(f'O número é {texto} o inverso dele é {inverso} e ele tem {contador} números')
