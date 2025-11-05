@@ -17,6 +17,3 @@ except ValueError:
 except Exception as Erro:
     sys.exit(f'ERRO: {Erro}')
 else:
-    # print('Deu certo')
-    triangulor_quilatero = ' '
-    
