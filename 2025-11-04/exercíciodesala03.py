@@ -35,14 +35,71 @@ except Exception as Erro:
 else:
     if numero < 1000 or numero > 9999:
         sys.exit(f'O valor informado deve ter exatamente quatro digitos!')
-    numero_str = str(numero)
-    if numero_str.count(numero_str[0]) == 4:
+    if str(numero).count(str(numero)[0]) == 4:
         sys.exit(f'O valor informado não pode ter os quatro digitos iguais!')
-    print('Deu certo')
-    # numero_ordenado_str = sorted(numero_str)
-    # numero_ordenado_inverso_str = sorted(numero_ordenado_str)
+    contador = 0
+    while numero != 6174:
+        contador += 1
+        numero_str = str(numero).zfill(4)
+        numero_ordenado_str = ''.join(sorted(numero_str))
+        numero_ordenado_inverso_str = numero_ordenado_str[::-1]
+        numero_ordenado_int = int(numero_ordenado_str)
+        numero_ordenado_inverso_int = int(numero_ordenado_inverso_str)
+        subtracao = numero_ordenado_inverso_int - numero_ordenado_int
+        print(f'{contador}ª iteração: {numero_ordenado_inverso_int} - {numero_ordenado_int} = {subtracao}')
+        numero = subtracao
+    print(f'O número converge para a constante de Kaprekar (6174) em {contador} iterações.')
 
-    # inverso_str = numero_str[::-1]
-    # inverso = int(inverso_str)
-    # subtracao = numero - inverso
-    # # print(f'{numero} - {inverso} = {subtracao}')
+
+
+
+
+
+
+
+
+# import sys
+
+# try:
+#    intNumero = int(input('Digite um número inteiro: '))
+# except ValueError:
+#    sys.exit('ERRO: Informe um número inteiro válido...')
+# except KeyboardInterrupt:
+#    sys.exit('AVISO: Programa interrompido pelo usuário...')
+# except Exception as e:
+#    sys.exit(f'ERRO: {e}')
+# else:
+#    # Verifica se o número está dentro do intervalo válido
+#    if intNumero < 1000 or intNumero > 9999:
+#       sys.exit(f'ERRO: O número {intNumero} é inválido. Deve ter exatamente 4 dígitos.')
+
+#    # Verifica se todos os dígitos são iguais
+#    '''
+#    strNumero     = int(intNumero)
+#    strPrimDigito = str(strNumero)[0]
+#    if strNumero.count(strPrimDigito) == 4:
+#       sys.exit(f'ERRO: O número {intNumero} é inválido. Deve conter pelo menos dois dígitos diferentes.')
+#    '''
+#    if str(intNumero).count(str(intNumero)[0]) == 4:
+#       sys.exit(f'ERRO: O número {intNumero} é inválido. Deve conter pelo menos dois dígitos diferentes.')
+
+#    # ------------------------------------------------------------
+#    # Inicializa o contador de iterações
+#    intIteracoes = 1
+  
+#    while intNumero != 6174:
+#       strNumero = str(intNumero).zfill(4)
+  
+#       strCrescente   = ''.join(sorted(strNumero))
+#       strDecrescente = ''.join(sorted(strNumero, reverse=True))
+
+#       intMaior = int(strDecrescente)
+#       intMenor = int(strCrescente)
+  
+#       intNumero = intMaior - intMenor
+
+#       print(f'{intIteracoes}ª iteração: {intMaior:04d} - {intMenor:04d} = {intNumero:04d}')
+
+#       intIteracoes += 1
+
+#    print(f'O número converge para a constante de Kaprekar (6174) em {intIteracoes} iterações.')
