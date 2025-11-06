@@ -33,11 +33,16 @@ except ValueError:
 except Exception as Erro:
     sys.exit(f'ERRO: {Erro}')
 else:
+    if numero < 1000 or numero > 9999:
+        sys.exit(f'O valor informado deve ter exatamente quatro digitos!')
     numero_str = str(numero)
-    numero_ordenado_str = sorted(numero_str)
-    numero_ordenado_inverso_str = sorted(numero_ordenado_str)
+    if numero_str.count(numero_str[0]) == 4:
+        sys.exit(f'O valor informado não pode ter os quatro digitos iguais!')
+    print('Deu certo')
+    # numero_ordenado_str = sorted(numero_str)
+    # numero_ordenado_inverso_str = sorted(numero_ordenado_str)
 
-    inverso_str = numero_str[::-1]
-    inverso = int(inverso_str)
-    subtracao = numero - inverso
-    # print(f'{numero} - {inverso} = {subtracao}')
+    # inverso_str = numero_str[::-1]
+    # inverso = int(inverso_str)
+    # subtracao = numero - inverso
+    # # print(f'{numero} - {inverso} = {subtracao}')
