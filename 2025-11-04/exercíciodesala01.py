@@ -16,6 +16,8 @@ else:
     for contador in range(1, numero+1):
         if numero % contador == 0:
             total +=1
+        if total > 2:
+            break
     if total == 2:
         print(f'{numero} é primo')
     else:
