@@ -1,0 +1,24 @@
+'''
+Crie um programa que vai gerar cinco números aleatórios e colocar em uma tupla. Depois disso, mostre a listagem de números gerados e também indique o menor e o maior valor que estão na tupla.
+'''
+from random import randint
+numeros = (randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10), )
+print(f'Os valores sorteados foram: {numeros}')
+print(f'O maior valor sorteado foi {max(numeros)}')
+print(f'O menor valor sorteado foi {min(numeros)}')
+
+# print('Os valores sorteados foram: ', end='')
+# maior = 0
+# menor = 0
+# for contador in range(1, 6):
+#     numero = random.randint(1, 10)
+#     print(numero, end=' ')
+#     if contador == 1:
+#         maior = numero
+#         menor = numero
+#     if numero > maior:
+#         maior = numero
+#     elif numero < menor:
+#         menor = numero
+# print(f'\nO maior valor sorteado foi {maior}')
+# print(f'O menor valor sorteado foi {menor}')
