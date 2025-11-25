@@ -39,7 +39,7 @@ print(f'A soma é {soma}')
 print(f'A média é {soma/len(lstValores):.1f}')
 
 # Exibir o maior valor na lista e sua posição
-print(f'O maior valor é {max(lstValores)}')
+print(f'O maior valor é {max(lstValores)} e sua posição é {lstValores.index(max(lstValores))+1}')
 
 # Exibir o menor valor na lista e sua posição
-print(f'O menor valor é {min(lstValores)}')
+print(f'O menor valor é {min(lstValores)} e sua posição é {lstValores.index(min(lstValores))+1}')
