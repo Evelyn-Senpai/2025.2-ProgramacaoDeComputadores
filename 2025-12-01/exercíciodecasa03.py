@@ -12,6 +12,7 @@ for i in range(5):
 print('-='*30)
 print('Nome do Aluno       Etapa 1     Etapa 2        Média')
 print('-'*60)
+sorted(lstAlunos)
 for lstAlunos in lstAlunos:
     nome = lstAlunos[0]
     nota1 = lstAlunos[1]
