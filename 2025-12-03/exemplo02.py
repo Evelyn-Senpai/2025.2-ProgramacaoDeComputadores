@@ -7,5 +7,5 @@ for i in range(1, 21):
 print(valores)
 arqSaida = open('fatoriais04.csv', 'a')
 for lista in valores:
-    arqSaida.write(f'{lista[0]};{lista[1]}\n')
+    arqSaida.write(f'\n{lista[0]};{lista[1]}\n')
 arqSaida.close()
