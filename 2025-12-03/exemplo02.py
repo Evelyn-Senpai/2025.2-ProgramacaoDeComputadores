@@ -5,7 +5,7 @@ for i in range(1, 21):
         x *= j
     valores.append([i, x])
 print(valores)
-arqSaida = open('fatoriais03.csv', 'w')
+arqSaida = open('fatoriais04.csv', 'a')
 for lista in valores:
     arqSaida.write(f'{lista[0]};{lista[1]}\n')
 arqSaida.close()
