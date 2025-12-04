@@ -1,3 +1,4 @@
+import os
 valores = list()
 for i in range(1, 21):
     x = 1
@@ -5,7 +6,7 @@ for i in range(1, 21):
         x *= j
     valores.append([i, x])
 print(valores)
-nomeDir = 'c:\\'
+nomeDir = os.path.dirname(__file__)
 nomeArquivo = f'{nomeDir}fatoriais04.csv'
 arqSaida = open(nomeArquivo, 'w')
 for lista in valores:
