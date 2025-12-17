@@ -1,0 +1,6 @@
+[32mA soma dos números é 243521[m
+[32mA média dos números é 163.55[m
+[32mA mediana dos números é 286.00[m
+[32mA variância dos números é 311686.42[m
+[32mO desvio padrão dos números é 163.55[m
+[32mAs linhas ignoradas foram 30[m

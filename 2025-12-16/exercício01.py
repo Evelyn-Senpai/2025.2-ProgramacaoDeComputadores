@@ -26,10 +26,17 @@ except Exception as Erro:
     sys.exit('\033[31mErro: {Erro}.\033[m')
 else:
     numeros = list()
+    erros = 0
     while True:
         linha = arqLeitura.readline().strip()
         if not linha: break
-        valor = int(linha)
+        try:
+            valor = int(linha)
+        except ValueError:
+            print(f'ERRO: Valor inválido {linha} ignorado!')
+            erros += 1
+        except Exception as ERRO:
+            print(f'ERRO: {ERRO} ao processar o valor {linha} foi ignorado!')
         numeros.append(valor)
     arqLeitura.close()
     soma = sum(numeros)
@@ -43,6 +50,7 @@ else:
     print(f'\033[32mA mediana dos números é {mediana:.2f}\033[m')
     print(f'\033[32mA variância dos números é {variancia:.2f}\033[m')
     print(f'\033[32mO desvio padrão dos números é {media:.2f}\033[m')
+    print(f'\033[32mAs linhas ignoradas foram {erros}\033[m')
     try:
         
         saida = open(f'{diretorio}\\resultados.txt', 'w', encoding='utf-8')
@@ -56,4 +64,5 @@ else:
         saida.write(f'\033[32mA mediana dos números é {mediana:.2f}\033[m\n')
         saida.write(f'\033[32mA variância dos números é {variancia:.2f}\033[m\n')
         saida.write(f'\033[32mO desvio padrão dos números é {media:.2f}\033[m\n')
+        saida.write(f'\033[32mAs linhas ignoradas foram {erros}\033[m')
         saida.close()
