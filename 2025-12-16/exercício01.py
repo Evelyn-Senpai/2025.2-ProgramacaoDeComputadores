@@ -45,7 +45,7 @@ else:
     print(f'\033[32mO desvio padrão dos números é {media:.2f}\033[m')
     try:
         
-        saida = open(f'{diretorio}\\resultados.txt', 'w')
+        saida = open(f'{diretorio}\\resultados.txt', 'w', encoding='utf-8')
     except FileNotFoundError:
         sys.exit('\033[31mArquivo não encontrado.\033[m')
     except Exception as Erro:
