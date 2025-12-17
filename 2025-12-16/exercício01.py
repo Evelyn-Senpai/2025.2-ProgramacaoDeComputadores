@@ -21,7 +21,7 @@ try:
     diretorio = os.path.dirname(__file__)
     arqLeitura = open(f'{diretorio}\\valores_1.txt', 'r')
 except FileNotFoundError:
-    sys.exit('\033[31mERRO: Arquivo não encontrado.\033[m')
+    sys.exit('\033[31mERRO: Arquivo não encontrado!\033[m')
 except Exception as Erro:
     sys.exit('\033[31mERRO: {Erro}.\033[m')
 else:
@@ -32,25 +32,23 @@ else:
         if not linha: break
         try:
             valor = int(linha)
+            numeros.append(valor)
         except ValueError:
             print(f'\033[31mERRO: Valor inválido {linha} ignorado!\033[m')
             erros += 1
         except Exception as ERRO:
             print(f'\033[31mERRO: {ERRO} ao processar o valor {linha} foi ignorado!\033[m')
-        numeros.append(valor)
     arqLeitura.close()
     soma = sum(numeros)
     media = soma/len(numeros)
 
-    lista_maiores = list()
-    lista_menores = list()
+    maiores = 0
+    menores = 0
     for i in numeros:
         if i > media:
-            lista_maiores.append(i)
+            maiores += 1
         elif i < media:
-            lista_menores.append(i)
-    maiores = len(lista_maiores)
-    menores = len(lista_menores)
+            menores += 1
 
     mediana = statistics.median(numeros)
     variancia = statistics.variance(numeros)
@@ -58,9 +56,9 @@ else:
     try:    
         saida = open(f'{diretorio}\\resultados.txt', 'w', encoding='utf-8')
     except FileNotFoundError:
-        sys.exit('\033[31mArquivo não encontrado.\033[m')
+        sys.exit('\033[31mArquivo não encontrado!\033[m')
     except Exception as Erro:
-        sys.exit('\033[31mErro: {Erro}.\033[m')
+        sys.exit(f'\033[31mErro: {Erro}!\033[m')
     else:
         saida.write(f'A soma dos números é {soma}.\n')
         saida.write(f'A média dos números é {media:.2f}.\n')
@@ -68,6 +66,8 @@ else:
         saida.write(f'Há {maiores} números maiores que a média.\n')
         saida.write(f'Há {menores} números menores que a média.\n')
         saida.write(f'A variância dos números é {variancia:.2f}.\n')
-        saida.write(f'O desvio padrão dos números é {media:.2f}.\n')
+        saida.write(f'O desvio padrão dos números é {desvio:.2f}.\n')
         saida.write(f'As linhas ignoradas foram {erros}.\n')
         saida.close()
+    
+    print('\033[32mValores foram adicionados.\033[m')

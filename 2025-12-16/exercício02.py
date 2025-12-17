@@ -11,8 +11,6 @@
    e) A mediana dos números;
    f) A variância dos números;
    g) O desvio padrão dos números.
-
-   Escreva os resultados em um arquivo chamado resultados.txt.
 '''
 
 import os, sys, statistics
@@ -21,53 +19,53 @@ try:
     diretorio = os.path.dirname(__file__)
     arqLeitura = open(f'{diretorio}\\valores_2.txt', 'r')
 except FileNotFoundError:
-    sys.exit('\033[31mArquivo não encontrado.\033[m')
-except ValueError:
-    sys.exit('\033[31mValor não suportado.\033[m')
+    sys.exit('\033[31mERRO: Arquivo não encontrado!\033[m')
 except Exception as Erro:
-    sys.exit('Erro: {Erro}.')
+    sys.exit('\033[31mERRO: {Erro}.\033[m')
 else:
     numeros = list()
     erros = 0
     while True:
         linha = arqLeitura.readline().strip()
         if not linha: break
-        if linha.isnumeric():
-            valor = int(linha)
-            numeros.append(valor)
         try:
             valor = int(linha)
+            numeros.append(valor)
         except ValueError:
-            print(f'ERRO: Valor inválido {linha} ignorado!')
+            print(f'\033[31mERRO: Valor inválido {linha} ignorado!\033[m')
             erros += 1
         except Exception as ERRO:
-            print(f'ERRO: {ERRO} ao processar o valor {linha} foi ignorado!')
-        numeros.append(valor)            
+            print(f'\033[31mERRO: {ERRO} ao processar o valor {linha} foi ignorado!\033[m')
     arqLeitura.close()
     soma = sum(numeros)
     media = soma/len(numeros)
 
+    maiores = 0
+    menores = 0
+    for i in numeros:
+        if i > media:
+            maiores += 1
+        elif i < media:
+            menores += 1
+
     mediana = statistics.median(numeros)
     variancia = statistics.variance(numeros)
     desvio = statistics.stdev(numeros)
-    print(f'\033[32mA soma dos números é {soma}\033[m')
-    print(f'\033[32mA média dos números é {media:.2f}\033[m')
-    print(f'\033[32mA mediana dos números é {mediana:.2f}\033[m')
-    print(f'\033[32mA variância dos números é {variancia:.2f}\033[m')
-    print(f'\033[32mO desvio padrão dos números é {media:.2f}\033[m')
-    print(f'\033[32mAs linhas ignoradas foram {erros}\033[m')
-    try:
-        
+    try:    
         saida = open(f'{diretorio}\\resultados_2.txt', 'w', encoding='utf-8')
     except FileNotFoundError:
-        sys.exit('\033[31mArquivo não encontrado.\033[m')
+        sys.exit('\033[31mArquivo não encontrado!\033[m')
     except Exception as Erro:
-        sys.exit('\033[31mErro: {Erro}.\033[m')
+        sys.exit(f'\033[31mErro: {Erro}!\033[m')
     else:
-        saida.write(f'\033[32mA soma dos números é {soma}\033[m\n')
-        saida.write(f'\033[32mA média dos números é {media:.2f}\033[m\n')
-        saida.write(f'\033[32mA mediana dos números é {mediana:.2f}\033[m\n')
-        saida.write(f'\033[32mA variância dos números é {variancia:.2f}\033[m\n')
-        saida.write(f'\033[32mO desvio padrão dos números é {media:.2f}\033[m\n')
-        saida.write(f'\033[32mAs linhas ignoradas foram {erros}\033[m')
-        saida.close()    
+        saida.write(f'A soma dos números é {soma}.\n')
+        saida.write(f'A média dos números é {media:.2f}.\n')
+        saida.write(f'A mediana dos números é {mediana:.2f}.\n')
+        saida.write(f'Há {maiores} números maiores que a média.\n')
+        saida.write(f'Há {menores} números menores que a média.\n')
+        saida.write(f'A variância dos números é {variancia:.2f}.\n')
+        saida.write(f'O desvio padrão dos números é {desvio:.2f}.\n')
+        saida.write(f'As linhas ignoradas foram {erros}.\n')
+        saida.close()
+    
+    print('\033[32mO restante dos valores foram adicionados.\033[m')

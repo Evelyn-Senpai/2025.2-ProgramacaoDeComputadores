@@ -1,6 +1,8 @@
-[32mA soma dos números é 243521[m
-[32mA média dos números é 163.55[m
-[32mA mediana dos números é 286.00[m
-[32mA variância dos números é 311686.42[m
-[32mO desvio padrão dos números é 163.55[m
-[32mAs linhas ignoradas foram 30[m
+A soma dos números é -5957.
+A média dos números é -6.14.
+A mediana dos números é 19.00.
+Há 489 números maiores que a média.
+Há 481 números menores que a média.
+A variância dos números é 341298.26.
+O desvio padrão dos números é 584.21.
+As linhas ignoradas foram 30.

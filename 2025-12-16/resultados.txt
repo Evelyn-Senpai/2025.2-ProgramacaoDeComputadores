@@ -4,5 +4,5 @@ A mediana dos números é 220.50.
 Há 519 números maiores que a média.
 Há 481 números menores que a média.
 A variância dos números é 29686.90.
-O desvio padrão dos números é 208.65.
+O desvio padrão dos números é 172.30.
 As linhas ignoradas foram 0.
