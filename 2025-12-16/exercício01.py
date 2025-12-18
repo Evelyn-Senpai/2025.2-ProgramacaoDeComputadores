@@ -1,7 +1,6 @@
 '''
    Fazer um programa que leia o arquivo valores_1.txt, que contém números 
-   inteiros, um por linha, gere uma lista contendo os números lidos.
-   
+   inteiros, um por linha, gere uma lista contendo os números lidos.   
    Após a leitura, calcule:
 
    a) A soma dos números;
