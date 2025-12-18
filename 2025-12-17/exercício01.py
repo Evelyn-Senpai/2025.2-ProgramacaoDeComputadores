@@ -47,4 +47,5 @@ else:
         except Exception as Erro:
             sys.exit(f'ERRO: {Erro}!')
     leitura.close()
+    print(lista_principal)
     print('\033[32mDeu certo\033[m')
